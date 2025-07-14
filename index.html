@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Mirror Display</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-900 via-pink-800 to-black text-white font-sans"
+  >
+    <header class="p-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Infinite Mirror</h1>
+      <button id="menuBtn" class="text-white text-2xl">☰</button>
+    </header>
+
+    <nav
+      id="sideMenu"
+      class="hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white p-6 z-50"
+    >
+      <ul class="space-y-4">
+        <li><a href="#lego" class="hover:text-pink-400">Quadri LEGO</a></li>
+        <li><a href="#led" class="hover:text-pink-400">Specchi LED</a></li>
+      </ul>
+    </nav>
+
+    <main class="p-6 space-y-8">
+      <h2 class="text-xl mb-4">Prodotti in evidenza</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-800 rounded-2xl p-4">
+          <img
+            src="assets/immagini/prodotto1.jpg"
+            class="rounded-xl mb-2"
+            alt="Quadro LEGO"
+          />
+          <h3 class="text-lg font-semibold">Quadro LEGO Espositivo</h3>
+          <p class="text-sm">
+            Cornice per auto LEGO compatibili con LED e plexiglass
+          </p>
+          <a
+            href="prodotti/quadro-lego-1.html"
+            class="text-pink-400 hover:underline"
+            >Scopri di più</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.getElementById("menuBtn").onclick = () => {
+        document.getElementById("sideMenu").classList.toggle("hidden");
+      };
+    </script>
+  </body>
+</html>
