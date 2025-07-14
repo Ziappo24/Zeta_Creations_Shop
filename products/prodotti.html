@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutti i Prodotti - ZETA CREATIONS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .truncate-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-900 via-pink-800 to-black text-white font-sans min-h-screen"
+  >
+    <header class="p-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">ZETA CREATIONS</h1>
+      <a href="index.html" class="text-pink-300 hover:underline">Home</a>
+    </header>
+
+    <main class="p-6 max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Tutti i Prodotti</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Inizio prodotto -->
+        <div
+          class="bg-gray-800 rounded-2xl shadow-lg hover:shadow-pink-600 transition p-4"
+        >
+          <img
+            src="assets/images/ferrari_50x70_v1/web.whatsapp_2.png"
+            alt="ferrari_50x70_v1"
+            class="rounded-xl w-full h-40 object-cover mb-3"
+          />
+          <h3 class="text-lg font-semibold">Quadro LEGO Espositivo</h3>
+          <p class="text-sm text-gray-300 truncate-description">
+            Cornice elegante per auto LEGO con LED integrato, plexiglass
+            protettivo e supporto da parete incluso. Ideale per ogni
+            collezionista.
+          </p>
+          <a
+            href="ferrari_50x70_v1.html"
+            class="text-pink-400 text-sm hover:underline mt-2 inline-block"
+            >Scopri di più</a
+          >
+        </div>
+        <!-- Fine prodotto -->
+
+        <!-- Duplicare il blocco qui per altri prodotti -->
+        <div
+          class="bg-gray-800 rounded-2xl shadow-lg hover:shadow-pink-600 transition p-4"
+        >
+          <img
+            src="assets/images/prodotto2.jpg"
+            alt="Prodotto 2"
+            class="rounded-xl w-full h-40 object-cover mb-3"
+          />
+          <h3 class="text-lg font-semibold">Specchio LED Infinito</h3>
+          <p class="text-sm text-gray-300 truncate-description">
+            Quadro con effetto specchio infinito grazie a LED RGB e pellicola
+            unidirezionale. Cornice nera in legno.
+          </p>
+          <a
+            href="prodotti/specchio-led-1.html"
+            class="text-pink-400 text-sm hover:underline mt-2 inline-block"
+            >Scopri di più</a
+          >
+        </div>
+        <!-- Aggiungi altri prodotti qui -->
+      </div>
+    </main>
+
+    <footer class="mt-12 p-6 text-center text-sm text-gray-400">
+      &copy; 2025 ZETA CREATIONS - Tutti i diritti riservati
+    </footer>
+  </body>
+</html>

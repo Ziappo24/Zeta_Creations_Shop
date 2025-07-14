@@ -3,63 +3,179 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Infinite Mirror Display</title>
+    <title>ZETA CREATIONS</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      body {
+        font-family: "Helvetica Neue", sans-serif;
+      }
+      .bg-grid {
+        background-image: radial-gradient(
+          circle at center,
+          #111 1px,
+          transparent 1px
+        );
+        background-size: 40px 40px;
+      }
+    </style>
   </head>
-  <body
-    class="bg-gradient-to-br from-purple-900 via-pink-800 to-black text-white font-sans"
-  >
-    <header class="p-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Infinite Mirror</h1>
-      <button id="menuBtn" class="text-white text-2xl">☰</button>
+  <body class="bg-black text-white bg-grid">
+    <!-- HEADER -->
+    <header
+      class="flex justify-between items-center p-6 bg-black z-50 relative"
+    >
+      <h1
+        class="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent"
+      >
+        ZETA CREATIONS
+      </h1>
+      <button id="menuBtn" class="text-white text-3xl focus:outline-none">
+        ☰
+      </button>
     </header>
 
+    <!-- SIDEMENU -->
     <nav
       id="sideMenu"
-      class="hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white p-6 z-50"
+      class="hidden fixed top-0 right-0 w-64 h-full bg-gray-900 p-6 z-50 shadow-2xl transition-transform transform"
     >
-      <ul class="space-y-4">
-        <li><a href="#lego" class="hover:text-pink-400">Quadri LEGO</a></li>
-        <li><a href="#led" class="hover:text-pink-400">Specchi LED</a></li>
+      <button id="closeMenu" class="text-white text-2xl mb-4">×</button>
+      <ul class="space-y-4 text-lg">
         <li>
-          <a href="config-frame.html" class="hover:text-pink-400"
-            >Configura Cornice</a
+          <a href="products/prodotti.html" class="hover:text-pink-400"
+            >Prodotti</a
           >
         </li>
-        <li>
-          <a href="contact.html" class="hover:text-pink-400">Contattaci</a>
-        </li>
+        <li><a href="#categorie" class="hover:text-pink-400">Categorie</a></li>
+        <li><a href="about.html" class="hover:text-pink-400">Chi siamo</a></li>
+        <li><a href="contact.html" class="hover:text-pink-400">Contatti</a></li>
       </ul>
     </nav>
 
-    <main class="p-6 space-y-8">
-      <h2 class="text-xl mb-4">Prodotti in evidenza</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gray-800 rounded-2xl p-4">
+    <!-- HERO -->
+    <section class="text-center py-16 px-4">
+      <h2
+        class="text-4xl md:text-5xl font-bold leading-tight bg-gradient-to-r from-white via-pink-500 to-purple-500 bg-clip-text text-transparent"
+      >
+        Esposizione unica per auto e design luminosi
+      </h2>
+      <p class="mt-4 text-lg text-gray-300">
+        Design moderni e funzionali per collezionisti e appassionati.
+      </p>
+    </section>
+
+    <!-- PRODOTTI DI TENDENZA -->
+    <section id="prodotti" class="px-6 py-12">
+      <h3 class="text-2xl font-semibold mb-6">Prodotti di Tendenza</h3>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Card esempio -->
+        <div class="bg-gray-800 rounded-2xl p-4 shadow-lg">
           <img
-            src="assets/immagini/prodotto1.jpg"
-            class="rounded-xl mb-2"
-            alt="Quadro LEGO"
+            src="assets/images/prodotto1.jpg"
+            alt="Prodotto 1"
+            class="rounded-xl mb-4"
           />
-          <h3 class="text-lg font-semibold">Quadro LEGO Espositivo</h3>
-          <p class="text-sm">
-            Cornice per auto LEGO compatibili con LED e plexiglass
+          <h4 class="text-lg font-bold">Quadro LEGO Espositivo</h4>
+          <p class="text-sm text-gray-300">
+            Compatibile con modelli LEGO, personalizza ora!
           </p>
-          <a
-            href="prodotti/quadro-lego-1.html"
-            class="text-pink-400 hover:underline"
-            >Scopri di più</a
-          >
+        </div>
+        <!-- Altri prodotti -->
+        <div class="bg-gray-800 rounded-2xl p-4 shadow-lg">
+          <img
+            src="assets/images/prodotto2.jpg"
+            alt="Prodotto 2"
+            class="rounded-xl mb-4"
+          />
+          <h4 class="text-lg font-bold">Specchio Infinito</h4>
+          <p class="text-sm text-gray-300">
+            Effetto visivo LED per modelli in esposizione.
+          </p>
+        </div>
+        <!-- Aggiungi altri 1-4 prodotti simili -->
+      </div>
+    </section>
+
+    <!-- CATEGORIE -->
+    <section
+      id="categorie"
+      class="px-6 py-12 bg-gradient-to-br from-purple-900 to-black rounded-t-3xl"
+    >
+      <h3 class="text-2xl font-semibold mb-6">Categorie</h3>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-gray-700 rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="assets/images/categoria1.jpg"
+            alt="Categoria 1"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-lg font-bold">Quadri LEGO</h4>
+          </div>
+        </div>
+        <div class="bg-gray-700 rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="assets/images/categoria2.jpg"
+            alt="Categoria 2"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h4 class="text-lg font-bold">Specchi Infinito</h4>
+          </div>
         </div>
       </div>
-    </main>
+    </section>
 
+    <!-- FOOTER -->
+    <footer class="bg-black text-gray-400 text-sm p-6 mt-16">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h5 class="font-bold text-white mb-2">Contatti</h5>
+          <p>
+            Email:
+            <a href="mailto:zetacreations@example.com" class="text-pink-400"
+              >zetacreations@example.com</a
+            >
+          </p>
+          <p>
+            Instagram:
+            <a href="https://instagram.com/zetacreations" class="text-pink-400"
+              >@zetacreations</a
+            >
+          </p>
+          <p>eBay: <a href="#" class="text-pink-400">Profilo eBay</a></p>
+          <p>Vinted: <a href="#" class="text-pink-400">Profilo Vinted</a></p>
+        </div>
+        <div>
+          <h5 class="font-bold text-white mb-2">Navigazione</h5>
+          <ul class="space-y-1">
+            <li><a href="#prodotti" class="hover:text-white">Prodotti</a></li>
+            <li><a href="#categorie" class="hover:text-white">Categorie</a></li>
+            <li>
+              <a href="contact.html" class="hover:text-white">Contattaci</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-center text-gray-500 text-xs">
+        © 2025 ZETA CREATIONS. Tutti i diritti riservati.
+      </p>
+    </footer>
+
+    <!-- JS MENU -->
     <script>
-      document.getElementById("menuBtn").onclick = () => {
-        document.getElementById("sideMenu").classList.toggle("hidden");
+      const menuBtn = document.getElementById("menuBtn");
+      const closeMenu = document.getElementById("closeMenu");
+      const sideMenu = document.getElementById("sideMenu");
+
+      menuBtn.onclick = () => {
+        sideMenu.classList.remove("hidden");
+      };
+      closeMenu.onclick = () => {
+        sideMenu.classList.add("hidden");
       };
     </script>
   </body>
