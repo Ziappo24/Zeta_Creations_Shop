@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configura la tua cornice</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-900 via-pink-800 to-black text-white font-sans min-h-screen p-6"
+  >
+    <h1 class="text-3xl font-bold mb-4">Configura la tua cornice</h1>
+    <p class="mb-6 text-gray-300">
+      Compila il modulo per ricevere un preventivo personalizzato via email.
+    </p>
+
+    <form
+      action="mailto:contatto@example.com"
+      method="POST"
+      enctype="text/plain"
+      class="bg-gray-900 p-6 rounded-2xl space-y-4 max-w-xl"
+    >
+      <label class="block">
+        Dimensione cornice:
+        <select name="dimensione" class="mt-1 p-2 w-full rounded text-black">
+          <option>50x70 cm nero cm</option>
+          <option>350x70 cm bianco cm</option>
+          <option>Personalizzata</option>
+        </select>
+      </label>
+
+      <label class="block">
+        LED:
+        <select name="led" class="mt-1 p-2 w-full rounded text-black">
+          <option>Sì</option>
+          <option>No</option>
+        </select>
+      </label>
+
+      <label class="block">
+        Powerbank:
+        <select name="powerbank" class="mt-1 p-2 w-full rounded text-black">
+          <option>Sì</option>
+          <option>No</option>
+        </select>
+      </label>
+
+      <label class="block">
+        Email:
+        <input
+          type="email"
+          name="email"
+          placeholder="esempio@email.com"
+          required
+          class="mt-1 p-2 w-full rounded text-black"
+        />
+      </label>
+
+      <label class="block">
+        Messaggio aggiuntivo:
+        <textarea
+          name="messaggio"
+          rows="4"
+          class="mt-1 p-2 w-full rounded text-black"
+          placeholder="Altre specifiche..."
+        ></textarea>
+      </label>
+
+      <button
+        type="submit"
+        class="bg-pink-600 hover:bg-pink-500 text-white px-4 py-2 rounded-xl"
+      >
+        Invia richiesta
+      </button>
+    </form>
+  </body>
+</html>
