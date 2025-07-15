@@ -241,7 +241,7 @@
     <!-- MENU -->
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav class="side-menu" id="sideMenu">
-      <a href="#">Cornici Espositive</a>
+      <a href="product_list.html">Cornici Espositive</a>
       <a href="#">Infinity Mirror</a>
       <a href="contact.html">Contatti</a>
       <a href="#">Informazioni</a>
@@ -352,9 +352,7 @@
 
                   <div style="width: 100%;">
                     <h4 class="titolo" style="font-size: 1.125rem; font-weight: bold; margin: 0;">
-                      <a href="/product/${product.id}" target="_blank">${
-              product.title
-            }</a>
+                      <a href="product.html?id=${product.id}">${product.title}</a>
                     </h4>
                     <p class="descrizione" style="font-size: 0.875rem; color: #d1d5db; margin: 8px 0;">
                       ${product.description}
@@ -410,13 +408,25 @@
 
         categorieContainer.innerHTML = ""; // svuota messaggio caricamento
 
+        const categoryLinks = {
+  "cornici espositive": "product_list.html",
+  "specchi infiniti": "infinite_mirror.html",
+  // aggiungi altre associazioni qui
+};
+
+        
         categorie.forEach((cat) => {
-          const div = document.createElement("div");
-          div.className = "categoria-box";
-          div.textContent = cat;
-          div.onclick = () => alert(`Categoria selezionata: ${cat}`);
-          categorieContainer.appendChild(div);
-        });
+  const div = document.createElement("div");
+  div.className = "categoria-box";
+  div.textContent = cat;
+
+  div.onclick = () => {
+    const page = categoryLinks[cat.toLowerCase()] || "product_list.html"; // default
+    window.location.href = page;
+  };
+
+  categorieContainer.appendChild(div);
+});
       });
     </script>
   </body>
