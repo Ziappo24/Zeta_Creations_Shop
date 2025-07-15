@@ -1,157 +1,172 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dettaglio Prodotto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: "Outfit", sans-serif;
-      background: linear-gradient(160deg, #0e0e0e, #2d0441);
-      color: white;
-      padding: 20px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dettaglio Prodotto</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Outfit", sans-serif;
+        background: linear-gradient(160deg, #0e0e0e, #2d0441);
+        color: white;
+        padding: 20px;
+      }
 
-    .home-link {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      text-decoration: none;
-      font-size: 1.8rem;
-      color: #fff;
-    }
+      .home-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #fff;
+      }
 
-    .home-link::before {
-      content: "🏠";
-      margin-right: 6px;
-    }
+      .home-link::before {
+        content: "🏠";
+        margin-right: 6px;
+      }
 
-    .container {
-      max-width: 1200px;
-      margin: 80px auto 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
+      .container {
+        max-width: 1200px;
+        margin: 80px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
 
-    .image-section {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+      .image-section {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
 
-    .thumbnails {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      overflow-y: auto;
-      max-height: 500px;
-    }
+      .thumbnails {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        max-height: 500px;
+      }
 
-    .thumbnails img {
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      opacity: 0.7;
-      transition: 0.3s;
-      border: 2px solid transparent;
-    }
+      .thumbnails img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: 0.3s;
+        border: 2px solid transparent;
+      }
 
-    .thumbnails img:hover,
-    .thumbnails img.active {
-      opacity: 1;
-      border-color: #ff70a6;
-    }
+      .thumbnails img:hover,
+      .thumbnails img.active {
+        opacity: 1;
+        border-color: #ff70a6;
+      }
 
-    .main-image img {
-      width: 500px;
-      height: 500px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.4);
-    }
+      .main-image img {
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      }
 
-    .details {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
 
-    .title {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #facc15;
-    }
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #facc15;
+      }
 
-    .category, .price {
-      font-size: 1.2rem;
-      color: #d1d5db;
-    }
+      .category,
+      .price {
+        font-size: 1.2rem;
+        color: #d1d5db;
+      }
 
-    .description {
-      font-size: 1rem;
-      color: #e5e7eb;
-      margin-top: 10px;
-      white-space: pre-line;
-    }
+      .description {
+        font-size: 1rem;
+        color: #e5e7eb;
+        margin-top: 10px;
+        white-space: pre-line;
+      }
 
-    .links {
-      margin-top: 20px;
-      display: flex;
-      gap: 20px;
-    }
+      .links {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
 
-    .links a {
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(90deg, #ff0080, #7928ca);
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+      .links a {
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(90deg, #ff0080, #7928ca);
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
 
-    .links a:hover {
-      background: linear-gradient(90deg, #ff4da6, #a56af8);
-    }
+      .links a:hover {
+        background: linear-gradient(90deg, #ff4da6, #a56af8);
+      }
 
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      color: #9ca3af;
-      font-size: 0.875rem;
-    }
-  </style>
-</head>
-<body>
-  <a href="index.html" class="home-link">Home</a>
+      footer {
+        margin-top: 60px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="home-link">Home</a>
 
-  <div class="container">
-    <div class="image-section" style="justify-content: center;">
-      <div class="thumbnails" id="thumbnailList"></div>
-      <div class="main-image">
-        <img src="" id="mainPreview" alt="Immagine prodotto" />
+    <div class="container">
+      <div class="image-section" style="justify-content: center">
+        <div class="thumbnails" id="thumbnailList"></div>
+        <div class="main-image">
+          <img src="" id="mainPreview" alt="Immagine prodotto" />
+          <div id="videoContainer" style="margin-top: 20px"></div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="title" id="title">Caricamento...</div>
+        <div class="category" id="category"></div>
+        <div class="price" id="price" style="color: #00ff08"></div>
+        <div class="description" id="description"></div>
+
+        <div class="links">
+          <a
+            id="vintedLink"
+            href="https://www.vinted.it/member/133587792"
+            target="_blank"
+            >Acquista su Vinted</a
+          >
+          <a
+            id="ebayLink"
+            href="https://www.ebay.it/usr/zeta.creation"
+            target="_blank"
+            >Acquista su eBay</a
+          >
+        </div>
       </div>
     </div>
 
-    <div class="details">
-      <div class="title" id="title">Caricamento...</div>
-      <div class="category" id="category"></div>
-      <div class="price" id="price" style="color:#00ff08"></div>
-      <div class="description" id="description"></div>
-
-      <div class="links">
-        <a id="vintedLink" href="https://www.vinted.it/member/133587792" target="_blank">Acquista su Vinted</a>
-        <a id="ebayLink" href="https://www.ebay.it/usr/zeta.creation" target="_blank">Acquista su eBay</a>
-      </div>
-    </div>
-  </div>
-
-     <footer>
+    <footer>
       <h3 style="font-size: 1.25rem; color: #f472b6; margin-bottom: 12px">
         Contatti
       </h3>
@@ -181,59 +196,89 @@
           >@zeta.creation</a
         >
       </p>
-       <a href="privacy.html" style="color: #ff70a6;">Privacy</a>
+      <a href="privacy.html" style="color: #ff70a6">Privacy</a>
       <p style="margin-top: 16px; font-size: 0.85rem; color: #9ca3af">
         &copy; 2025 Zeta Creations Shop. Tutti i diritti riservati.
       </p>
     </footer>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get("id");
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get("id");
 
-    fetch('product_list.json')
-      .then(response => response.json())
-      .then(products => {
-        const product = products.find(p => p.id === productId);
+      fetch("product_list.json")
+        .then((response) => response.json())
+        .then((products) => {
+          const product = products.find((p) => p.id === productId);
 
-        if (!product) {
-          document.getElementById('title').textContent = "Prodotto non trovato";
-          return;
-        }
+          if (!product) {
+            document.getElementById("title").textContent =
+              "Prodotto non trovato";
+            return;
+          }
 
-        // Inserisci dati
-        document.getElementById('title').textContent = product.title;
-        document.getElementById('category').textContent = 'Categoria: ' + product.category;
-        document.getElementById('price').textContent = 'Prezzo: €' + product.price.toFixed(2).replace('.', ',');
-        document.getElementById('description').textContent = product.description;
+          // Inserisci dati
+          document.getElementById("title").textContent = product.title;
+          document.getElementById("category").textContent =
+            "Categoria: " + product.category;
+          document.getElementById("price").textContent =
+            "Prezzo: €" + product.price.toFixed(2).replace(".", ",");
+          document.getElementById("description").textContent =
+            product.description;
 
-        // Immagine principale
-        const mainImage = document.getElementById('mainPreview');
-        mainImage.src = product.images[0];
+          // Immagine principale
+          const mainImage = document.getElementById("mainPreview");
+          mainImage.src = product.images[0];
 
-        // Thumbnails
-        const thumbnails = document.getElementById('thumbnailList');
-        thumbnails.innerHTML = '';
-        product.images.forEach((src, i) => {
-          const thumb = document.createElement('img');
-          thumb.src = src;
-          if (i === 0) thumb.classList.add('active');
-          thumb.onclick = () => {
-            mainImage.src = src;
-            document.querySelectorAll('#thumbnailList img').forEach(img => img.classList.remove('active'));
-            thumb.classList.add('active');
-          };
-          thumbnails.appendChild(thumb);
+          // Thumbnails
+          const thumbnails = document.getElementById("thumbnailList");
+          thumbnails.innerHTML = "";
+          product.images.forEach((src, i) => {
+            const thumb = document.createElement("img");
+            thumb.src = src;
+            if (i === 0) thumb.classList.add("active");
+            thumb.onclick = () => {
+              mainImage.src = src;
+              document
+                .querySelectorAll("#thumbnailList img")
+                .forEach((img) => img.classList.remove("active"));
+              thumb.classList.add("active");
+            };
+            thumbnails.appendChild(thumb);
+          });
+
+          // Video (se presente)
+          const videoContainer = document.getElementById("videoContainer");
+          if (product.video) {
+            const videoElement = document.createElement("video");
+            videoElement.controls = true;
+            videoElement.playsInline = true;
+            videoElement.preload = "metadata";
+            videoElement.autoplay = true;
+            videoElement.muted = true;
+            videoElement.loop = true;
+
+            videoElement.style.width = "100%";
+            videoElement.style.height = "500px";
+            videoElement.style.borderRadius = "12px";
+            videoElement.style.boxShadow = "0 0 12px rgba(0,0,0,0.4)";
+
+            videoElement.innerHTML = `
+    <source src="${product.video}" type="video/mp4">
+    Il tuo browser non supporta il video.
+  `;
+
+            videoContainer.appendChild(videoElement);
+          }
+          // (Opzionale) Collegamenti dinamici ai marketplace
+          // document.getElementById('vintedLink').href = `https://www.vinted.it/member/tuoaccount?id=${product.id}`;
+          // document.getElementById('ebayLink').href = `https://www.ebay.it/usr/tuoaccount?id=${product.id}`;
+        })
+        .catch((err) => {
+          console.error("Errore nel caricamento del prodotto:", err);
+          document.getElementById("title").textContent =
+            "Errore nel caricamento del prodotto";
         });
-
-        // (Opzionale) Collegamenti dinamici ai marketplace
-        // document.getElementById('vintedLink').href = `https://www.vinted.it/member/tuoaccount?id=${product.id}`;
-        // document.getElementById('ebayLink').href = `https://www.ebay.it/usr/tuoaccount?id=${product.id}`;
-      })
-      .catch(err => {
-        console.error("Errore nel caricamento del prodotto:", err);
-        document.getElementById('title').textContent = "Errore nel caricamento del prodotto";
-      });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

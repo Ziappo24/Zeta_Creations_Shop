@@ -1,136 +1,138 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lista Prodotti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      font-family: "Outfit", sans-serif;
-      background: linear-gradient(160deg, #0e0e0e, #2d0441);
-      color: white;
-      padding: 20px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Prodotti</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Outfit", sans-serif;
+        background: linear-gradient(160deg, #0e0e0e, #2d0441);
+        color: white;
+        padding: 20px;
+      }
 
-    .home-link {
-      text-decoration: none;
-      font-size: 1.8rem;
-      color: #fff;
-    }
+      .home-link {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #fff;
+      }
 
-    .home-link::before {
-      content: "🏠";
-      margin-right: 6px;
-    }
+      .home-link::before {
+        content: "🏠";
+        margin-right: 6px;
+      }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
-    }
+      h1 {
+        font-size: 2.5rem;
+        margin-top: 20px;
+      }
 
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 30px 0;
-    }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 30px 0;
+      }
 
-    .controls input,
-    .controls select {
-      padding: 10px;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: none;
-      background: #1f1f1f;
-      color: white;
-    }
+      .controls input,
+      .controls select {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: none;
+        background: #1f1f1f;
+        color: white;
+      }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  justify-content: start; /* evita che si allarghi troppo */
-}
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        justify-content: start; /* evita che si allarghi troppo */
+      }
 
-   .product-card {
-  width: 280px;   /* fissa la larghezza */
-  max-width: 280px;
-  background: #49244d;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s;
-}
+      .product-card {
+        width: 280px; /* fissa la larghezza */
+        max-width: 280px;
+        background: #49244d;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s;
+      }
 
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
 
-    .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+      .product-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
 
-    .product-info {
-      padding: 16px;
-    }
+      .product-info {
+        padding: 16px;
+      }
 
-    .product-title {
-      font-size: 1.2rem;
-      color: #facc15;
-      margin-bottom: 6px;
-    }
+      .product-title {
+        font-size: 1.2rem;
+        color: #facc15;
+        margin-bottom: 6px;
+      }
 
-    .product-price {
-      color: #ff70a6;
-      margin-bottom: 6px;
-    }
+      .product-price {
+        color: #09ff00;
+        margin-bottom: 6px;
+      }
 
-    .product-description {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
+      .product-description {
+        font-size: 0.9rem;
+        color: #ccc;
+      }
 
-    .product-card a {
-      display: block;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(90deg, #ff0080, #7928ca);
-      text-align: center;
-      padding: 10px;
-      margin-top: 12px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+      .product-card a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(90deg, #ff0080, #7928ca);
+        text-align: center;
+        padding: 10px;
+        margin-top: 12px;
+        border-radius: 8px;
+        font-weight: bold;
+      }
 
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      color: #9ca3af;
-      font-size: 0.875rem;
-    }
-  </style>
-</head>
-<body>
+      footer {
+        margin-top: 60px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="home-link">Home</a>
+    <h1>Tutti i Prodotti</h1>
 
-  <a href="index.html" class="home-link">Home</a>
-  <h1>Tutti i Prodotti</h1>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Cerca per nome..." />
+      <select id="sortSelect">
+        <option value="">Ordina per...</option>
+        <option value="name-asc">Nome A-Z</option>
+        <option value="name-desc">Nome Z-A</option>
+        <option value="price-asc">Prezzo crescente</option>
+        <option value="price-desc">Prezzo decrescente</option>
+      </select>
+    </div>
 
-  <div class="controls">
-    <input type="text" id="searchInput" placeholder="Cerca per nome..." />
-    <select id="sortSelect">
-      <option value="">Ordina per...</option>
-      <option value="name-asc">Nome A-Z</option>
-      <option value="name-desc">Nome Z-A</option>
-      <option value="price-asc">Prezzo crescente</option>
-      <option value="price-desc">Prezzo decrescente</option>
-    </select>
-  </div>
-
-  <div class="grid" id="productGrid"></div>
+    <div class="grid" id="productGrid"></div>
 
     <footer>
       <h3 style="font-size: 1.25rem; color: #f472b6; margin-bottom: 12px">
@@ -162,73 +164,83 @@
           >@zeta.creation</a
         >
       </p>
-       <a href="privacy.html" style="color: #ff70a6;">Privacy</a>
+      <a href="privacy.html" style="color: #ff70a6">Privacy</a>
       <p style="margin-top: 16px; font-size: 0.85rem; color: #9ca3af">
         &copy; 2025 Zeta Creations Shop. Tutti i diritti riservati.
       </p>
     </footer>
 
-  <script>
-    let products = [];
+    <script>
+      let products = [];
 
-    function renderProducts(filtered) {
-      const grid = document.getElementById('productGrid');
-      grid.innerHTML = '';
+      function renderProducts(filtered) {
+        const grid = document.getElementById("productGrid");
+        grid.innerHTML = "";
 
-      filtered.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
+        filtered.forEach((product) => {
+          const card = document.createElement("div");
+          card.className = "product-card";
 
-        card.innerHTML = `
+          card.innerHTML = `
           <img src="${product.images[0]}" alt="${product.title}">
           <div class="product-info">
             <div class="product-title">${product.title}</div>
             <div class="product-price">€${product.price.toFixed(2)}</div>
-            <div class="product-description">${product.description.slice(0, 80)}...</div>
+            <div class="product-description">${product.description.slice(
+              0,
+              80
+            )}...</div>
             <a href="product.html?id=${product.id}">Scopri di più</a>
           </div>
         `;
 
-        grid.appendChild(card);
-      });
-    }
-
-    function applyFilters() {
-      const search = document.getElementById('searchInput').value.toLowerCase();
-      const sort = document.getElementById('sortSelect').value;
-
-      let filtered = products.filter(p => p.title.toLowerCase().includes(search));
-
-      switch (sort) {
-        case 'name-asc':
-          filtered.sort((a, b) => a.title.localeCompare(b.title));
-          break;
-        case 'name-desc':
-          filtered.sort((a, b) => b.title.localeCompare(a.title));
-          break;
-        case 'price-asc':
-          filtered.sort((a, b) => a.price - b.price);
-          break;
-        case 'price-desc':
-          filtered.sort((a, b) => b.price - a.price);
-          break;
+          grid.appendChild(card);
+        });
       }
 
-      renderProducts(filtered);
-    }
+      function applyFilters() {
+        const search = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const sort = document.getElementById("sortSelect").value;
 
-    // Fetch e inizializzazione
-    fetch('product_list.json')
-      .then(response => response.json())
-      .then(data => {
-        products = data;
-        renderProducts(products);
-      });
+        let filtered = products.filter((p) =>
+          p.title.toLowerCase().includes(search)
+        );
 
-    // Eventi
-    document.getElementById('searchInput').addEventListener('input', applyFilters);
-    document.getElementById('sortSelect').addEventListener('change', applyFilters);
-  </script>
+        switch (sort) {
+          case "name-asc":
+            filtered.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+          case "name-desc":
+            filtered.sort((a, b) => b.title.localeCompare(a.title));
+            break;
+          case "price-asc":
+            filtered.sort((a, b) => a.price - b.price);
+            break;
+          case "price-desc":
+            filtered.sort((a, b) => b.price - a.price);
+            break;
+        }
 
-</body>
+        renderProducts(filtered);
+      }
+
+      // Fetch e inizializzazione
+      fetch("product_list.json")
+        .then((response) => response.json())
+        .then((data) => {
+          products = data;
+          renderProducts(products);
+        });
+
+      // Eventi
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", applyFilters);
+      document
+        .getElementById("sortSelect")
+        .addEventListener("change", applyFilters);
+    </script>
+  </body>
 </html>
