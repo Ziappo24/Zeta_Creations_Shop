@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contattaci - Zeta Creations</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Outfit", sans-serif;
+        background: linear-gradient(160deg, #0e0e0e, #2d0441);
+        color: white;
+        padding: 20px;
+      }
+
+      .home-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #fff;
+      }
+
+      .home-link::before {
+        content: "🏠";
+        margin-right: 6px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, #ff0080, #7928ca, #3e0558);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 40px;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 0 auto 60px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #1f1f1f;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      label {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #f472b6;
+      }
+
+      input,
+      textarea {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background-color: #2e2e2e;
+        color: white;
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: 2px solid #ff70a6;
+      }
+
+      button {
+        padding: 12px;
+        background: linear-gradient(90deg, #ff0080, #7928ca);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: linear-gradient(90deg, #ff4da6, #a56af8);
+      }
+
+      .social-section {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .social-title {
+        font-size: 1.6rem;
+        color: #ff70a6;
+        margin-bottom: 24px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .social-card {
+        text-decoration: none;
+        color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .social-card:hover {
+        transform: scale(1.05);
+      }
+
+      .social-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+        object-fit: contain;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      }
+
+      .social-name {
+        font-size: 1rem;
+        color: #d1d5db;
+      }
+
+      footer {
+        margin-top: 60px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html" class="home-link">Home</a>
+    <h1>Contattaci</h1>
+
+    <form
+      action="mailto:ziappusbusiness@gmail.com"
+      method="post"
+      enctype="text/plain"
+    >
+      <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="messaggio">Messaggio</label>
+        <textarea id="messaggio" name="messaggio" required></textarea>
+      </div>
+      <button type="submit">Invia</button>
+    </form>
+
+    <section class="social-section">
+      <h2 class="social-title">Seguici o scrivici sui social</h2>
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/zeta.creation/"
+          class="social-card"
+          target="_blank"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+            alt="Instagram"
+            class="social-logo"
+          />
+          <div class="social-name">@zeta.creation</div>
+        </a>
+        <a
+          href="https://www.vinted.it/member/133587792"
+          class="social-card"
+          target="_blank"
+        >
+          <img
+            src="data:image/png;base64,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"
+            alt="Vinted"
+            class="social-logo"
+            style="background: #0e0e0e"
+          />
+          <div class="social-name">@ziappo</div>
+        </a>
+        <a
+          href="https://www.ebay.it/usr/zeta.creation"
+          class="social-card"
+          target="_blank"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg"
+            alt="eBay"
+            class="social-logo"
+          />
+          <div class="social-name">@zeta.creation</div>
+        </a>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 Zeta Creations Shop. Tutti i diritti riservati.</footer>
+  </body>
+</html>
