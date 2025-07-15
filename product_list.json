@@ -91,5 +91,35 @@
     "price": 59,
     "popularity": 5,
     "category": "Cornici Espositive"
+  },
+  {
+    "id": "007",
+    "title": "Cornice espositiva per F1 RedBull lego 50x70",
+    "description": "Quadro/poster a tema per macchina lego technic. Poster per RedBull F1 dimensioni 70cm x 50cm cornice colore nero. ganci per appendere l'auto inclusi Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. MACCHINA NON INCLUSA LE FOTO CON LA MACCHINA SONO SOLO DI ESEMPIO",
+    "images": [
+      "/assets/images/redbull_v1/1.png",
+      "/assets/images/redbull_v1/2.png",
+      "/assets/images/redbull_v1/3.png",
+      "/assets/images/redbull_v1/4.png",
+      "/assets/images/redbull_v1/5.png"
+    ],
+    "price": 59,
+    "popularity": 5,
+    "category": "Cornici Espositive"
+  },
+  {
+    "id": "008",
+    "title": "Cornice espositiva per F1 RedBull lego 50x70 versione 2 ",
+    "description": "Quadro/poster a tema per macchina lego technic. Poster per RedBull F1 versione 2 dimensioni 70cm x 50cm cornice colore nero. ganci per appendere l'auto inclusi Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. MACCHINA NON INCLUSA LE FOTO CON LA MACCHINA SONO SOLO DI ESEMPIO",
+    "images": [
+      "/assets/images/redbull_v2/1.png",
+      "/assets/images/redbull_v2/2.png",
+      "/assets/images/redbull_v2/3.png",
+      "/assets/images/redbull_v2/4.png",
+      "/assets/images/redbull_v2/5.png"
+    ],
+    "price": 59,
+    "popularity": 4,
+    "category": "Cornici Espositive"
   }
 ]
