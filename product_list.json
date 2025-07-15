@@ -22,6 +22,7 @@
     "images": [
       "/assets/images/porsche_arancione/4.png",
       "/assets/images/porsche_arancione/5.png",
+      "/assets/images/porsche_arancione/6.png",
       "/assets/images/porsche_arancione/1.png",
       "/assets/images/porsche_arancione/2.png",
       "/assets/images/porsche_arancione/3.png"
@@ -32,31 +33,60 @@
   },
   {
     "id": "003",
-    "title": "Cornice espositiva per F1 Ferrari lego 50x70 versione 1",
+    "title": "Cornice espositiva per McLaren P1 lego 50x70",
+    "description": "Quadro/poster a tema per McLaren P1 lego technic Poster per McLaren P1 dimensioni 50cm x 70cm cornice colore nero. Include ganci per appendere la macchina. Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. PER ALTRE VERSIONI SCRIVI IN PRIVATO MACCHINA NON INCLUSA",
+    "images": [
+      "/assets/images/mclaren_p1/1.png",
+      "/assets/images/mclaren_p1/2.png",
+      "/assets/images/mclaren_p1/3.png",
+      "/assets/images/mclaren_p1/7.png",
+      "/assets/images/mclaren_p1/4.png",
+      "/assets/images/mclaren_p1/5.png",
+      "/assets/images/mclaren_p1/6.png"
+    ],
+    "price": 59,
+    "popularity": 2,
+    "category": "Cornici Espositive"
+  },
+  {
+    "id": "004",
+    "title": "Cornice espositiva per F1 Ferrari lego 50x70 versione 2",
     "description": "Quadro + poster a tema per F1 Ferrari lego technic 65cm Poster per F1 Ferrari dimensioni 50cm x 70cm cornice colore nero. Include ganci per appendere la macchina. Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. PER ALTRE VERSIONI SCRIVI IN PRIVATO MACCHINA NON INCLUSA",
     "images": [
-      "/assets/images/ferrariv1/web.whatsapp.png",
-      "/assets/images/ferrariv1/web.whatsapp_2.png",
-      "/assets/images/ferrariv1/web.whatsapp3.png",
-      "/assets/images/ferrariv1/ferrariV2mock1(1).png",
-      "/assets/images/ferrariv1/V2mock3(1).png",
-      "/assets/images/ferrariv1/v2mock2(1).png"
+      "/assets/images/ferrariv2/1.png",
+      "/assets/images/ferrariv2/2.png",
+      "/assets/images/ferrariv2/3.png",
+      "/assets/images/ferrariv2/4.png"
+    ],
+    "price": 59,
+    "popularity": 4,
+    "category": "Cornici Espositive"
+  },
+  {
+    "id": "005",
+    "title": "Cornice espositiva per F1 Mclaren 50x70 versione 1",
+    "description": "Quadro/poster a tema per macchina lego technic. Poster per Mclaren F1 dimensioni 70cm x 50cm cornice colore nero. ganci per appendere l'auto inclusi Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. MACCHINA NON INCLUSA LE FOTO CON LA MACCHINA SONO SOLO DI ESEMPIO",
+    "images": [
+      "/assets/images/mclaren_f1_v1/1.png",
+      "/assets/images/mclaren_f1_v1/2.png",
+      "/assets/images/mclaren_f1_v1/3.png",
+      "/assets/images/mclaren_f1_v1/4.png",
+      "/assets/images/mclaren_f1_v1/5.png"
     ],
     "price": 59,
     "popularity": 5,
     "category": "Cornici Espositive"
   },
   {
-    "id": "004",
-    "title": "Cornice espositiva per F1 Ferrari lego 50x70 versione 1",
-    "description": "Quadro + poster a tema per F1 Ferrari lego technic 65cm Poster per F1 Ferrari dimensioni 50cm x 70cm cornice colore nero. Include ganci per appendere la macchina. Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. PER ALTRE VERSIONI SCRIVI IN PRIVATO MACCHINA NON INCLUSA",
+    "id": "006",
+    "title": "Cornice espositiva per F1 Mercedes lego 50x70",
+    "description": "Quadro/poster a tema per macchina lego technic. Poster per Mercedes F1 dimensioni 70cm x 50cm cornice colore nero. ganci per appendere l'auto inclusi Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. MACCHINA NON INCLUSA LE FOTO CON LA MACCHINA SONO SOLO DI ESEMPIO",
     "images": [
-      "/assets/images/ferrariv1/web.whatsapp.png",
-      "/assets/images/ferrariv1/web.whatsapp_2.png",
-      "/assets/images/ferrariv1/web.whatsapp3.png",
-      "/assets/images/ferrariv1/ferrariV2mock1(1).png",
-      "/assets/images/ferrariv1/V2mock3(1).png",
-      "/assets/images/ferrariv1/v2mock2(1).png"
+      "/assets/images/mercedes/1.png",
+      "/assets/images/mercedes/2.png",
+      "/assets/images/mercedes/3.png",
+      "/assets/images/mercedes/4.png",
+      "/assets/images/mercedes/5.png"
     ],
     "price": 59,
     "popularity": 5,

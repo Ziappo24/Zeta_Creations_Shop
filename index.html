@@ -29,7 +29,7 @@
       .site-title {
         font-size: 4rem;
         font-weight: 700;
-        background: linear-gradient(90deg, #ff0080, #7928ca, #3e0558);
+        background: linear-gradient(90deg, #ff0080, #7928ca);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-transform: uppercase;
@@ -232,7 +232,7 @@
         text-align: center;
         padding: 20px;
         color: #9ca3af;
-        background-color: transparent;
+        background-color: #1e032c;
       }
     </style>
   </head>
@@ -276,7 +276,38 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 Zeta Creations Shop. All rights reserved.</p>
+      <h3 style="font-size: 1.25rem; color: #f472b6; margin-bottom: 12px">
+        Contatti
+      </h3>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        Email:
+        <a
+          href="mailto:ziappusbusiness@gmail.com"
+          style="color: #d1d5db; text-decoration: underline"
+          >ziappusbusiness@gmail.com</a
+        >
+      </p>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        Vinted:
+        <a
+          href="https://www.vinted.it/member/133587792"
+          target="_blank"
+          style="color: #d1d5db; text-decoration: underline"
+          >@ziappo</a
+        >
+      </p>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        eBay:
+        <a
+          href="https://www.ebay.it/usr/zeta.creation"
+          target="_blank"
+          style="color: #d1d5db; text-decoration: underline"
+          >@zeta.creation</a
+        >
+      </p>
+      <p style="margin-top: 16px; font-size: 0.85rem; color: #9ca3af">
+        &copy; 2025 Zeta Creations Shop. Tutti i diritti riservati.
+      </p>
     </footer>
 
     <!-- SCRIPT -->
@@ -332,7 +363,7 @@
                       Categoria: ${product.category}
                     </p>
                     <p class="popolarita" style="font-size: 1rem; color: #facc15; margin: 0;">
-                      ★ Popularity: ${product.popularity}/5
+                      ★ Popolarità: ${product.popularity}/5
                     </p>
                     <p class="prezzo" style="font-size: 1rem; color: #10b981; margin-top: 8px;">
                       Prezzo: €${product.price.toFixed(2).replace(".", ",")}
