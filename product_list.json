@@ -324,5 +324,45 @@
     "price": 59,
     "popularity": 2,
     "category": "Cornici Espositive"
+  },
+  {
+    "id": "023",
+    "title": "Cornice espositiva per F1 Ferrari lego 50x70 versione 3",
+    "description": "Quadro/poster a tema per macchina lego technic. Poster per F1 Ferrari versione 3 dimensioni 70cm x 50cm cornice colore nero. ganci per appendere l'auto inclusi Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. MACCHINA NON INCLUSA LE FOTO CON LA MACCHINA SONO SOLO DI ESEMPIO",
+    "images": [
+      "assets/images/ferrari_v3/1.png",
+      "assets/images/ferrari_v3/2.png",
+      "assets/images/ferrari_v3/3.png"
+    ],
+    "price": 59,
+    "popularity": 2,
+    "category": "Cornici Espositive"
+  },
+  {
+    "id": "024",
+    "title": "Cornice espositiva per F1 Mercedes lego 50x70 versione 2",
+    "description": "Quadro/poster a tema per macchina lego technic. Poster per F1 Mercedes  versione 2 dimensioni 70cm x 50cm cornice colore nero. ganci per appendere l'auto inclusi Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. MACCHINA NON INCLUSA LE FOTO CON LA MACCHINA SONO SOLO DI ESEMPIO",
+    "images": [
+      "assets/images/mercedes_v2/1.png",
+      "assets/images/mercedes_v2/2.png",
+      "assets/images/mercedes_v2/3.png"
+    ],
+    "price": 59,
+    "popularity": 2,
+    "category": "Cornici Espositive"
+  },
+  {
+    "id": "025",
+    "title": "Cornice espositiva per F1 RedBull lego 50x70 versione 2",
+    "description": "Quadro/poster a tema per macchina lego technic. Poster per F1 RedBull versione 2 dimensioni 70cm x 50cm cornice colore nero. ganci per appendere l'auto inclusi Disponibile a creare altre grafiche per macchine specifiche su ordinazione. Per richieste personalizzate contattami. Disponibile anche in diverse dimensioni. MACCHINA NON INCLUSA LE FOTO CON LA MACCHINA SONO SOLO DI ESEMPIO",
+    "images": [
+      "assets/images/redbull_v3/1.png",
+      "assets/images/redbull_v3/2.png",
+      "assets/images/redbull_v3/3.png",
+      "assets/images/redbull_v3/4.png"
+    ],
+    "price": 59,
+    "popularity": 2,
+    "category": "Cornici Espositive"
   }
 ]
