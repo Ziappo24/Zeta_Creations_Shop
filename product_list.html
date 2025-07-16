@@ -9,25 +9,6 @@
       rel="stylesheet"
     />
     <style>
-      @media (max-width: 600px) {
-        .grid {
-          justify-content: center;
-        }
-
-        .controls {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .controls input,
-        .controls select {
-          width: 100%;
-        }
-
-        body {
-          padding: 16px;
-        }
-      }
       body {
         margin: 0;
         padding: 20px;
@@ -94,7 +75,7 @@
       .product-card img {
         width: 100%;
         height: 300px;
-        object-fit: cover;
+        object-fit: contain;
       }
 
       .product-info {
@@ -134,6 +115,68 @@
         text-align: center;
         color: #9ca3af;
         font-size: 0.875rem;
+      }
+      .arrow {
+        position: absolute;
+        top: 30%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 1rem;
+        padding: 4px 8px;
+        cursor: pointer;
+        display: none;
+        z-index: 1;
+        border-radius: 5px;
+      }
+
+      .arrow.left {
+        left: 5px;
+      }
+
+      .arrow.right {
+        right: 5px;
+      }
+
+      .image-wrapper:hover .arrow {
+        display: block;
+      }
+
+      @media (max-width: 400px) {
+        .grid {
+          grid-template-columns: repeat(1, 90vw);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: repeat(
+            2,
+            48vw
+          ); /* Due colonne da 48% del viewport */
+          gap: 16px;
+          justify-content: center;
+        }
+
+        .product-card {
+          width: 100%;
+          max-width: unset;
+        }
+
+        .controls {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .controls input,
+        .controls select {
+          width: 100%;
+        }
+
+        body {
+          padding: 16px;
+        }
       }
     </style>
   </head>
@@ -201,19 +244,56 @@
           const card = document.createElement("div");
           card.className = "product-card";
 
-          card.innerHTML = `
-          <img src="${product.images[0]}" alt="${product.title}">
-          <div class="product-info">
-            <div class="product-title">${product.title}</div>
-            <div class="product-price">€${product.price.toFixed(2)}</div>
-            <div class="product-description">${product.description.slice(
-              0,
-              80
-            )}...</div>
-            <a href="product.html?id=${product.id}">Scopri di più</a>
-          </div>
-        `;
+          // Wrapper immagine (con posizione relativa per posizionare freccette)
+          const imgWrapper = document.createElement("div");
+          imgWrapper.className = "image-wrapper"; // usa la classe con stile
 
+          // Immagine prodotto iniziale
+          const img = document.createElement("img");
+          img.src = product.images[0];
+          img.alt = product.title;
+          img.dataset.index = 0; // indice immagine corrente
+          imgWrapper.appendChild(img);
+
+          // Pulsante freccia sinistra
+          const leftArrow = document.createElement("button");
+          leftArrow.className = "arrow left";
+          leftArrow.innerHTML = "❮";
+          leftArrow.onclick = () => {
+            let index = parseInt(img.dataset.index);
+            index = (index - 1 + product.images.length) % product.images.length;
+            img.src = product.images[index];
+            img.dataset.index = index;
+          };
+          imgWrapper.appendChild(leftArrow);
+
+          // Pulsante freccia destra
+          const rightArrow = document.createElement("button");
+          rightArrow.className = "arrow right";
+          rightArrow.innerHTML = "❯";
+          rightArrow.onclick = () => {
+            let index = parseInt(img.dataset.index);
+            index = (index + 1) % product.images.length;
+            img.src = product.images[index];
+            img.dataset.index = index;
+          };
+          imgWrapper.appendChild(rightArrow);
+
+          // Info prodotto
+          const info = document.createElement("div");
+          info.className = "product-info";
+          info.innerHTML = `
+      <div class="product-title">${product.title}</div>
+      <div class="product-price">€${product.price.toFixed(2)}</div>
+      <div class="product-description">${product.description.slice(
+        0,
+        80
+      )}...</div>
+      <a href="product.html?id=${product.id}">Scopri di più</a>
+    `;
+
+          card.appendChild(imgWrapper);
+          card.appendChild(info);
           grid.appendChild(card);
         });
       }

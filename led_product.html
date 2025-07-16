@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dettaglio Prodotto</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Outfit", sans-serif;
+        background: linear-gradient(160deg, #0e0e0e, #2d0441);
+        color: white;
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .home-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #fff;
+      }
+
+      .home-link::before {
+        content: "🏠";
+        margin-right: 6px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 80px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .image-section {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .thumbnails {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        max-height: 500px;
+      }
+
+      .thumbnails img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: 0.3s;
+        border: 2px solid transparent;
+      }
+
+      .thumbnails img:hover,
+      .thumbnails img.active {
+        opacity: 1;
+        border-color: #ff70a6;
+      }
+
+      .main-image img {
+        width: 500px;
+        height: 500px;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #facc15;
+      }
+
+      .category,
+      .price {
+        font-size: 1.2rem;
+        color: #d1d5db;
+      }
+
+      .description {
+        font-size: 1rem;
+        color: #e5e7eb;
+        margin-top: 10px;
+        white-space: pre-line;
+      }
+
+      .links {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(90deg, #ff0080, #7928ca);
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .links a:hover {
+        background: linear-gradient(90deg, #ff4da6, #a56af8);
+      }
+
+      footer {
+        margin-top: 60px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 0.875rem;
+      }
+
+      @media (max-width: 768px) {
+        .image-section {
+          flex-direction: row;
+          align-items: flex-start;
+          flex-wrap: nowrap; /* ❗ impedisce di andare a capo */
+        }
+
+        .thumbnails {
+          max-height: 280px;
+          flex-shrink: 0;
+          width: 60px; /* larghezza fissa per le thumbnails */
+        }
+
+        .main-image {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .main-image img {
+          width: 100%;
+          max-width: 280px;
+          height: auto;
+          object-fit: contain;
+        }
+
+        #videoContainer video {
+          width: 100%;
+          max-width: 280px;
+          height: auto;
+        }
+
+        .details {
+          padding: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="home-link">Home</a>
+
+    <div class="container">
+      <div class="image-section" style="justify-content: center">
+        <div class="thumbnails" id="thumbnailList"></div>
+        <div class="main-image">
+          <img src="" id="mainPreview" alt="Immagine prodotto" />
+          <div id="videoContainer" style="margin-top: 20px"></div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="title" id="title">Caricamento...</div>
+        <div class="category" id="category"></div>
+        <div class="price" id="price" style="color: #00ff08"></div>
+        <div class="description" id="description"></div>
+
+        <div class="links">
+          <a
+            id="vintedLink"
+            href="https://www.vinted.it/member/133587792"
+            target="_blank"
+            >Acquista su Vinted</a
+          >
+          <a
+            id="ebayLink"
+            href="https://www.ebay.it/usr/zeta.creation"
+            target="_blank"
+            >Acquista su eBay</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <h3 style="font-size: 1.25rem; color: #f472b6; margin-bottom: 12px">
+        Contatti
+      </h3>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        Email:
+        <a
+          href="mailto:ziappusbusiness@gmail.com"
+          style="color: #d1d5db; text-decoration: underline"
+          >ziappusbusiness@gmail.com</a
+        >
+      </p>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        Vinted:
+        <a
+          href="https://www.vinted.it/member/133587792"
+          target="_blank"
+          style="color: #d1d5db; text-decoration: underline"
+          >@ziappo</a
+        >
+      </p>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        eBay:
+        <a
+          href="https://www.ebay.it/usr/zeta.creation"
+          target="_blank"
+          style="color: #d1d5db; text-decoration: underline"
+          >@zeta.creation</a
+        >
+      </p>
+      <a href="privacy.html" style="color: #ff70a6">Privacy</a>
+      <p style="margin-top: 16px; font-size: 0.85rem; color: #9ca3af">
+        &copy; 2025 Zeta Creations Shop. Tutti i diritti riservati.
+      </p>
+    </footer>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get("id");
+
+      fetch("led_list.json")
+        .then((response) => response.json())
+        .then((products) => {
+          const product = products.find((p) => p.id === productId);
+
+          if (!product) {
+            document.getElementById("title").textContent =
+              "Prodotto non trovato";
+            return;
+          }
+
+          // Inserisci dati
+          document.getElementById("title").textContent = product.title;
+          document.getElementById("category").textContent = product.category;
+          document.getElementById(
+            "price"
+          ).textContent = `Length: ${product.length} m – ${product.voltage}V`;
+          document.getElementById("description").textContent =
+            product.description;
+
+          // Link Vinted & eBay (usa se definiti nel JSON)
+          if (product.vinted_link) {
+            document.getElementById("vintedLink").href = product.vinted_link;
+          }
+          if (product.ebay_link) {
+            document.getElementById("ebayLink").href = product.ebay_link;
+          }
+
+          // Immagini
+          const thumbnailList = document.getElementById("thumbnailList");
+          thumbnailList.innerHTML = "";
+          if (product.images && product.images.length) {
+            product.images.forEach((img, index) => {
+              const thumbImg = document.createElement("img");
+              thumbImg.src = img;
+              thumbImg.alt = `${product.title} immagine ${index + 1}`;
+              if (index === 0) thumbImg.classList.add("active");
+
+              thumbImg.addEventListener("click", () => {
+                document.getElementById("mainPreview").src = img;
+
+                // Highlight attivo
+                document
+                  .querySelectorAll(".thumbnails img")
+                  .forEach((el) => el.classList.remove("active"));
+                thumbImg.classList.add("active");
+
+                // Rimuovi video se presente
+                document.getElementById("videoContainer").innerHTML = "";
+              });
+
+              thumbnailList.appendChild(thumbImg);
+            });
+            // Mostra prima immagine
+            document.getElementById("mainPreview").src = product.images[0];
+          }
+
+          // Video (se esiste)
+          if (product.video) {
+            const videoContainer = document.getElementById("videoContainer");
+            const videoEl = document.createElement("video");
+            videoEl.controls = true;
+            videoEl.src = product.video;
+            videoEl.type = "video/mp4";
+            videoContainer.appendChild(videoEl);
+          }
+        })
+        .catch((error) => {
+          console.error("Errore nel caricamento prodotti:", error);
+          document.getElementById("title").textContent =
+            "Errore nel caricamento del prodotto.";
+        });
+    </script>
+  </body>
+</html>

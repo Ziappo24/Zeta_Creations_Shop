@@ -1,0 +1,33 @@
+[
+  {
+    "id": "001",
+    "title": "Striscia LED USB RGB COB 5V 3m nastro LED flessibile con controller Smart APP Bluetooth",
+    "images": [
+      "assets/images/leds/rgb_3m_remote.png",
+      "assets/images/leds/rgb_3m_remote_2.png"
+    ],
+    "led_m": 600,
+    "remote_controller": true,
+    "description": "La striscia LED è lunga 3 metri e dispone di 600 LED per metro, offrendo una luce brillante e uniforme. È alimentata tramite USB a 5 Volt e include un telecomando e un'app per il controllo tramite Bluetooth. La striscia è dimmerabile e può cambiare colore, offrendo diverse modalità di luminosità e colori RGB. Le funzionalità aggiuntive includono la funzione di temporizzazione, la funzione di memoria, il controllo di gruppo e la possibilità di tagliare la striscia per adattarla alle esigenze specifiche. La striscia è dotata di un nastro adesivo 3M originale per una facile installazione su superfici asciutte e pulite.",
+    "length": 3,
+    "voltage": 5,
+    "rgb": true,
+    "power_supply": "USB"
+  },
+  {
+    "id": "002",
+    "title": "Striscia LED COB da 3 metri, USB 5 V, luce bianca calda, 3000 K, USB, dimmerabile, 960 LED, flessibile",
+    "images": [
+      "assets/images/leds/led_calda1.png",
+      "assets/images/leds/led_calda2.png",
+      "assets/images/leds/led_calda3.png"
+    ],
+    "led_m": 320,
+    "remote_controller": false,
+    "description": "La striscia LED COB è lunga 3 metri, alimentata tramite USB a 5 V e offre una luce bianca calda a 3000 K. È dimmerabile e dispone di 960 LED, rendendola flessibile e adatta per l'illuminazione di camere da letto, case e armadi. La striscia è tagliabile e ha un buon adesivo sul retro per una facile installazione. È dotata di un interruttore USB dimmerabile che consente di regolare la luminosità su dieci livelli diversi.",
+    "length": 3,
+    "voltage": 5,
+    "rgb": false,
+    "power_supply": "USB"
+  }
+]

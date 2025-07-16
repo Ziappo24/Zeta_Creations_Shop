@@ -249,7 +249,10 @@
     "images": [
       "assets/images/bugatti/1.png",
       "assets/images/bugatti/2.png",
-      "assets/images/bugatti/3.png"
+      "assets/images/bugatti/3.png",
+      "assets/images/bugatti/4.png",
+      "assets/images/bugatti/5.png",
+      "assets/images/bugatti/6.png"
     ],
     "price": 59,
     "popularity": 2,
@@ -318,8 +321,7 @@
     "images": [
       "assets/images/ford/1.png",
       "assets/images/ford/2.png",
-      "assets/images/ford/3.png",
-      "assets/images/ford/4.png"
+      "assets/images/ford/3.png"
     ],
     "price": 59,
     "popularity": 2,
@@ -358,8 +360,7 @@
     "images": [
       "assets/images/redbull_v3/1.png",
       "assets/images/redbull_v3/2.png",
-      "assets/images/redbull_v3/3.png",
-      "assets/images/redbull_v3/4.png"
+      "assets/images/redbull_v3/3.png"
     ],
     "price": 59,
     "popularity": 2,

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LED Products</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Reset base */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: linear-gradient(160deg, #0e0e0e, #2d0441);
+        color: white;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .site-title {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, #ff0080, #7928ca);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+      }
+
+      .sezione-prodotti-popolari {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .contenitore {
+        background-color: #360836;
+        border-radius: 10px;
+        padding: 20px;
+        width: 380px;
+        box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
+        transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        cursor: default;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contenitore:hover {
+        background-color: #49244d;
+        box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+      }
+
+      /* Carousel container */
+      .carousel {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #230022;
+      }
+
+      /* Carousel images */
+      .carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        display: none;
+      }
+
+      .carousel img.active {
+        display: block;
+      }
+
+      /* Navigation arrows */
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+
+      .arrow.left {
+        left: 10px;
+      }
+
+      .arrow.right {
+        right: 10px;
+      }
+
+      /* Text styles */
+      .categoria {
+        font-size: 0.9rem;
+        color: #ec4899;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .titolo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #ff70a6;
+      }
+
+      .descrizione {
+        font-size: 0.9rem;
+        color: #d1d5db;
+        min-height: 3rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* limita a 3 righe */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .prezzo {
+        font-weight: 600;
+        color: #10b981;
+      }
+
+      .dettagli {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        color: #f3f4f6;
+      }
+      .home-link {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #fff;
+      }
+
+      .home-link::before {
+        content: "🏠";
+        margin-right: 6px;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: #9ca3af;
+        background-color: #1e032c;
+      }
+
+      /* Responsive */
+      @media (max-width: 767px) {
+        .contenitore {
+          width: calc(
+            100% - 40px
+          ); /* occupa quasi tutta la larghezza con padding */
+        }
+      }
+
+      @media (max-width: 400px) {
+        .contenitore {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="home-link">Home</a>
+
+    <header>
+      <h1 class="site-title">LED Products</h1>
+    </header>
+
+    <main>
+      <section class="sezione-prodotti-popolari" id="led-list">
+        <!-- LED products will be dynamically inserted here -->
+      </section>
+    </main>
+    <footer>
+      <h3 style="font-size: 1.25rem; color: #f472b6; margin-bottom: 12px">
+        Contatti
+      </h3>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        Email:
+        <a
+          href="mailto:ziappusbusiness@gmail.com"
+          style="color: #d1d5db; text-decoration: underline"
+          >ziappusbusiness@gmail.com</a
+        >
+      </p>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        Vinted:
+        <a
+          href="https://www.vinted.it/member/133587792"
+          target="_blank"
+          style="color: #d1d5db; text-decoration: underline"
+          >@ziappo</a
+        >
+      </p>
+      <p style="margin: 4px 0; font-size: 0.95rem">
+        eBay:
+        <a
+          href="https://www.ebay.it/usr/zeta.creation"
+          target="_blank"
+          style="color: #d1d5db; text-decoration: underline"
+          >@zeta.creation</a
+        >
+      </p>
+      <a href="privacy.html" style="color: #ff70a6">Privacy</a>
+      <p style="margin-top: 16px; font-size: 0.85rem; color: #9ca3af">
+        &copy; 2025 Zeta Creations Shop. Tutti i diritti riservati.
+      </p>
+    </footer>
+    <script>
+      fetch("led_list.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const container = document.getElementById("led-list");
+
+          data.forEach((product, index) => {
+            const div = document.createElement("div");
+            div.className = "contenitore";
+
+            // Carousel markup
+            // product.images is assumed to be an array of image URLs
+            let carouselHTML = `<div class="carousel" id="carousel-${index}">`;
+            product.images.forEach((imgUrl, i) => {
+              carouselHTML += `<img src="${imgUrl}" alt="${
+                product.title
+              } image ${i + 1}" class="${i === 0 ? "active" : ""}">`;
+            });
+            carouselHTML += `
+              <button class="arrow left" data-carousel="${index}" aria-label="Previous image">&#10094;</button>
+              <button class="arrow right" data-carousel="${index}" aria-label="Next image">&#10095;</button>
+              </div>`;
+
+            div.innerHTML = `
+              ${carouselHTML}
+              <div class="categoria">LED Strip</div>
+              <div class="titolo"><a href="led_product.html?id=${
+                product.id
+              }" style="color: inherit; text-decoration: none;">${
+              product.title
+            }</a></div>
+              <div class="descrizione">${product.description}</div>
+              <div class="prezzo">Length: ${product.length} m – ${
+              product.voltage
+            }V</div>
+              <div class="dettagli">
+                <strong>LED/m:</strong> ${product.led_m}<br>
+                <strong>Remote:</strong> ${
+                  product.remote_controller ? "Yes" : "No"
+                }<br>
+                <strong>RGB:</strong> ${product.rgb ? "Yes" : "No"}<br>
+                <strong>Power Supply:</strong> ${product.power_supply}
+              </div>
+            `;
+
+            container.appendChild(div);
+          });
+
+          // Carousel functionality
+          function changeImage(carouselIndex, direction) {
+            const carousel = document.getElementById(
+              `carousel-${carouselIndex}`
+            );
+            const images = carousel.querySelectorAll("img");
+            let activeIndex = Array.from(images).findIndex((img) =>
+              img.classList.contains("active")
+            );
+
+            images[activeIndex].classList.remove("active");
+
+            if (direction === "next") {
+              activeIndex = (activeIndex + 1) % images.length;
+            } else {
+              activeIndex = (activeIndex - 1 + images.length) % images.length;
+            }
+
+            images[activeIndex].classList.add("active");
+          }
+
+          // Attach event listeners to arrows
+          document.querySelectorAll(".arrow").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              const carouselIndex = parseInt(btn.getAttribute("data-carousel"));
+              const isNext = btn.classList.contains("right");
+              changeImage(carouselIndex, isNext ? "next" : "prev");
+            });
+          });
+        })
+        .catch((error) => {
+          console.error("Error loading LED products:", error);
+        });
+    </script>
+  </body>
+</html>
