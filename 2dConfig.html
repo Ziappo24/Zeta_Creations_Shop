@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Configuratore Cornice Personalizzata</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: linear-gradient(160deg, #0e0e0e, #2d0441);
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        min-height: 100vh;
+        overflow-y: auto;
+      }
+      .configurator {
+        background: #222;
+        padding: 20px 30px 30px 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #660066;
+        max-width: 450px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        margin-bottom: 25px;
+        text-align: center;
+      }
+      /* Anteprima cornice verticale 50x70 (proporzioni) */
+      .frame-wrapper {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        transition: background-color 0.3s ease;
+        max-width: 260px; /* un po’ più largo per il contrasto */
+        width: 400px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .frame-wrapper.black-bg {
+        background-color: #111; /* scuro attorno */
+      }
+      .frame-wrapper.white-bg {
+        background-color: #8b8b8b; /* chiaro attorno */
+      }
+      /* Cornice meno arrotondata */
+      .frame-preview {
+        width: 200px;
+        height: 280px;
+        border: 12px solid black;
+        border-radius: 2px; /* ridotto */
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: border-color 0.3s ease, filter 0.3s ease;
+        background: transparent;
+      }
+      .frame-preview.white {
+        border-color: white;
+      }
+      .graphic-overlay {
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        pointer-events: none;
+        opacity: 0.75;
+        filter: brightness(1);
+        border-radius: 6px;
+        mix-blend-mode: screen;
+        transition: filter 0.3s ease;
+      }
+      /* LED Glow Animazioni più evidenti sul bordo di frame-preview */
+      @keyframes ledGlowRGB {
+        0% {
+          box-shadow: 0 0 8px 2px #ff00ff, 0 0 20px 6px #00ffff,
+            0 0 30px 10px #ff0000;
+        }
+        50% {
+          box-shadow: 0 0 15px 4px #00ffff, 0 0 25px 8px #ff0000,
+            0 0 35px 12px #ff00ff;
+        }
+        100% {
+          box-shadow: 0 0 8px 2px #ff0000, 0 0 20px 6px #ff00ff,
+            0 0 30px 10px #00ffff;
+        }
+      }
+
+      @keyframes ledGlowWarm {
+        0% {
+          box-shadow: 0 0 8px 2px #ffbb66, 0 0 20px 6px #ffaa33,
+            0 0 30px 10px #ffcc55;
+        }
+        100% {
+          box-shadow: 0 0 22px 7px #ffaa33, 0 0 30px 10px #ffbb66,
+            0 0 40px 15px #ffcc55;
+        }
+      }
+
+      .led-glow-rgb {
+        animation: ledGlowRGB 3s infinite alternate;
+        z-index: 2;
+        position: relative;
+      }
+
+      .led-glow-warm {
+        animation: ledGlowWarm 3s infinite alternate;
+        z-index: 2;
+        position: relative;
+      }
+      label {
+        width: 100%;
+        margin: 10px 0 6px 0;
+        font-weight: bold;
+      }
+      select,
+      input[type="color"],
+      input[type="radio"],
+      input[type="checkbox"] {
+        font-size: 16px;
+      }
+      select,
+      input[type="color"] {
+        width: 100%;
+        padding: 6px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+        background: #333;
+        color: white;
+        margin-bottom: 15px;
+      }
+      .radio-group,
+      .checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 15px;
+      }
+      .radio-group label,
+      .checkbox-label label {
+        font-weight: normal;
+        cursor: pointer;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        transform: scale(1.3);
+        cursor: pointer;
+      }
+      .graphics-list {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .graphic-option {
+        border: 3px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: border-color 0.3s ease;
+      }
+      .graphic-option.selected {
+        border-color: #ff00ff;
+      }
+      .info-dimensions,
+      .info-mail {
+        font-size: 14px;
+        color: #bbb;
+        font-style: italic;
+        text-align: center;
+      }
+      .info-mail {
+        margin-top: 15px;
+      }
+      button {
+        margin-top: 25px;
+        background: #800080;
+        border: none;
+        padding: 14px;
+        color: white;
+        font-size: 16px;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: background 0.3s ease;
+      }
+      button:hover {
+        background: #aa00aa;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="configurator"
+      role="main"
+      aria-label="Configuratore Cornice Personalizzata"
+    >
+      <h1>Configuratore Cornice Personalizzata</h1>
+
+      <div
+        id="frameWrapper"
+        class="frame-wrapper white-bg"
+        aria-label="Anteprima cornice"
+      >
+        <div
+          id="framePreview"
+          class="frame-preview"
+          style="border-color: black"
+        >
+          <div id="graphicOverlay" class="graphic-overlay"></div>
+        </div>
+      </div>
+
+      <label for="modelSelect">Modello:</label>
+      <select id="modelSelect" aria-describedby="dimensionsInfo"></select>
+      <div class="info-dimensions" id="dimensionsInfo"></div>
+
+      <label>Tipo cornice:</label>
+      <div class="radio-group" id="frameTypeGroup">
+        <label
+          ><input type="radio" name="frameColor" value="black" checked />
+          Nero</label
+        >
+        <label
+          ><input type="radio" name="frameColor" value="white" /> Bianco</label
+        >
+      </div>
+
+      <label>Classe cornice:</label>
+      <div class="radio-group" id="frameClassGroup">
+        <label
+          ><input type="radio" name="frameClass" value="standard" checked />
+          Standard</label
+        >
+        <label
+          ><input type="radio" name="frameClass" value="premium" />
+          Premium</label
+        >
+      </div>
+
+      <div id="ledEnableWrapper" class="checkbox-label" style="display: none">
+        <label><input type="checkbox" id="ledEnabled" /> LED attivi</label>
+      </div>
+
+      <div id="ledOptions" style="display: none">
+        <label>LED tipo:</label>
+        <div class="radio-group" id="ledTypeGroup">
+          <label
+            ><input type="radio" name="ledType" value="rgb" checked />
+            RGB</label
+          >
+          <label
+            ><input type="radio" name="ledType" value="warm" /> Luce
+            Calda</label
+          >
+        </div>
+      </div>
+
+      <label>Grafica predefinita:</label>
+      <div class="graphics-list" id="graphicsList"></div>
+
+      <div class="info-mail" role="note">
+        Per loghi speciali o richieste particolari, scrivere una mail
+        dettagliata.
+      </div>
+
+      <button
+        id="requestQuoteBtn"
+        aria-label="Richiedi preventivo cornice personalizzata"
+      >
+        Richiedi preventivo
+      </button>
+    </div>
+
+    <script>
+      const frameWrapper = document.getElementById("frameWrapper");
+      const framePreview = document.getElementById("framePreview");
+      const graphicOverlay = document.getElementById("graphicOverlay");
+      const modelSelect = document.getElementById("modelSelect");
+      const dimensionsInfo = document.getElementById("dimensionsInfo");
+      const graphicsList = document.getElementById("graphicsList");
+      const requestQuoteBtn = document.getElementById("requestQuoteBtn");
+      const frameTypeRadios = document.querySelectorAll(
+        'input[name="frameColor"]'
+      );
+      const frameClassRadios = document.querySelectorAll(
+        'input[name="frameClass"]'
+      );
+      const ledEnableWrapper = document.getElementById("ledEnableWrapper");
+      const ledEnableCheckbox = document.getElementById("ledEnabled");
+      const ledOptionsDiv = document.getElementById("ledOptions");
+      const ledTypeRadios = document.querySelectorAll('input[name="ledType"]');
+
+      let selectedGraphic = null;
+
+      // Modelli con dimensioni e grafiche (vuote ora)
+      const models = [
+        // 50x70 cm fissi
+        { name: "Ferrari SF-24", size: "50x70 cm", graphics: [] },
+        { name: "Mercedes F1", size: "50x70 cm", graphics: [] },
+        { name: "RedBull F1", size: "50x70 cm", graphics: [] },
+        { name: "McLaren F1", size: "50x70 cm", graphics: [] },
+        { name: "McLaren P1", size: "50x70 cm", graphics: [] },
+        { name: "Peugeot 9X8", size: "50x70 cm", graphics: [] },
+        { name: "Bugatti Chiron", size: "50x70 cm", graphics: [] },
+        { name: "Porsche Arancione", size: "50x70 cm", graphics: [] },
+        { name: "Porsche GT3-RSR", size: "50x70 cm", graphics: [] },
+        { name: "Lamborghini Sian", size: "50x70 cm", graphics: [] },
+        { name: "Ford GT", size: "50x70 cm", graphics: [] },
+
+        // 30x40 cm fissi
+        { name: "McLaren Senna", size: "30x40 cm", graphics: [] },
+        { name: "Williams Racing", size: "30x40 cm", graphics: [] },
+        { name: "Nissan GTR", size: "30x40 cm", graphics: [] },
+        { name: "Koenigsegg Jesko", size: "30x40 cm", graphics: [] },
+        { name: "Jesko Absolute", size: "30x40 cm", graphics: [] },
+        { name: "Toyota Supra", size: "30x40 cm", graphics: [] },
+
+        // 40x50 cm fissi
+        { name: "Moto BMW S1000RR", size: "40x50 cm", graphics: [] },
+      ];
+
+      // Funzione per popolare select modelli
+      function populateModels() {
+        modelSelect.innerHTML = "";
+        models.forEach((model, idx) => {
+          const option = document.createElement("option");
+          option.value = idx;
+          option.textContent = model.name;
+          modelSelect.appendChild(option);
+        });
+        selectedGraphic = null;
+        updateDimensionsInfo();
+        updateGraphicsList();
+      }
+
+      // Aggiorna info dimensioni
+      function updateDimensionsInfo() {
+        const model = models[modelSelect.value];
+        if (model) {
+          dimensionsInfo.textContent = `Dimensioni: ${model.size}`;
+          updateFrameSize(model.size);
+        } else {
+          dimensionsInfo.textContent = "";
+        }
+      }
+
+      // Aggiorna dimensione anteprima cornice (mantiene proporzioni, dimensioni max adattate)
+      function updateFrameSize(sizeStr) {
+        const [wStr, hStr] = sizeStr.split("x");
+        let w = parseInt(wStr);
+        let h = parseInt(hStr);
+
+        // In pixel base per 1cm = 4px (per esempio)
+        const scale = 4;
+
+        let widthPx = w * scale;
+        let heightPx = h * scale;
+
+        // Limita larghezza max per non sbordare (max 220px width)
+        if (widthPx > 220) {
+          const ratio = 220 / widthPx;
+          widthPx = 220;
+          heightPx = heightPx * ratio;
+        }
+        // Limita altezza max (280px)
+        if (heightPx > 280) {
+          const ratio = 280 / heightPx;
+          heightPx = 280;
+          widthPx = widthPx * ratio;
+        }
+
+        framePreview.style.width = `${widthPx}px`;
+        framePreview.style.height = `${heightPx}px`;
+      }
+
+      // Aggiorna lista grafiche (al momento nessuna grafica, ma puoi aggiungerle)
+      function updateGraphicsList() {
+        graphicsList.innerHTML = "";
+        // Nessuna grafica per ora
+        selectedGraphic = null;
+        updateFramePreview();
+      }
+
+      // Aggiorna anteprima cornice e contrasto esterno
+      function updateFramePreview() {
+        const frameColor =
+          Array.from(frameTypeRadios).find((r) => r.checked)?.value || "black";
+
+        // Cornice
+        if (frameColor === "white") {
+          framePreview.classList.add("white");
+          framePreview.style.borderColor = "white";
+          // sfondo attorno invertito (cornice bianca → sfondo nero)
+          frameWrapper.classList.remove("white-bg");
+          frameWrapper.classList.add("black-bg");
+        } else {
+          framePreview.classList.remove("white");
+          framePreview.style.borderColor = "black";
+          // sfondo attorno invertito (cornice nera → sfondo bianco)
+          frameWrapper.classList.remove("black-bg");
+          frameWrapper.classList.add("white-bg");
+        }
+
+        // Grafica overlay
+        if (selectedGraphic) {
+          graphicOverlay.style.backgroundImage = `url(${selectedGraphic.url})`;
+          graphicOverlay.style.display = "block";
+        } else {
+          graphicOverlay.style.backgroundImage = "";
+          graphicOverlay.style.display = "none";
+        }
+
+        // Classe cornice
+        const frameClass =
+          Array.from(frameClassRadios).find((r) => r.checked)?.value ||
+          "standard";
+
+        // LED gestione
+        if (frameClass === "premium") {
+          ledEnableWrapper.style.display = "flex";
+        } else {
+          ledEnableWrapper.style.display = "none";
+          ledOptionsDiv.style.display = "none";
+          ledEnableCheckbox.checked = false;
+        }
+
+        if (frameClass === "premium" && ledEnableCheckbox.checked) {
+          ledOptionsDiv.style.display = "block";
+          applyLedGlow(); // rimane uguale, ma ora lavora su framePreview
+        } else {
+          ledOptionsDiv.style.display = "none";
+          removeLedGlow();
+        }
+      }
+
+      // Applica glow LED
+      function applyLedGlow() {
+        framePreview.classList.remove("led-glow-rgb", "led-glow-warm");
+
+        const frameClass =
+          Array.from(frameClassRadios).find((r) => r.checked)?.value || "";
+        if (!ledEnableCheckbox.checked || frameClass !== "premium") return;
+
+        const ledType =
+          Array.from(ledTypeRadios).find((r) => r.checked)?.value || "";
+        if (ledType === "rgb") {
+          framePreview.classList.add("led-glow-rgb");
+        } else if (ledType === "warm") {
+          framePreview.classList.add("led-glow-warm");
+        }
+      }
+
+      function removeLedGlow() {
+        framePreview.classList.remove("led-glow-rgb", "led-glow-warm");
+      }
+
+      // Event listeners
+      modelSelect.addEventListener("change", () => {
+        updateDimensionsInfo();
+        updateGraphicsList();
+      });
+
+      frameTypeRadios.forEach((radio) =>
+        radio.addEventListener("change", updateFramePreview)
+      );
+
+      frameClassRadios.forEach((radio) =>
+        radio.addEventListener("change", updateFramePreview)
+      );
+
+      ledEnableCheckbox.addEventListener("change", updateFramePreview);
+
+      ledTypeRadios.forEach((radio) =>
+        radio.addEventListener("change", applyLedGlow)
+      );
+
+      requestQuoteBtn.addEventListener("click", () => {
+        const model = models[modelSelect.value]?.name || "";
+        const frameColor =
+          Array.from(frameTypeRadios).find((r) => r.checked)?.value || "";
+        const frameClass =
+          Array.from(frameClassRadios).find((r) => r.checked)?.value || "";
+        const ledEnabled =
+          ledEnableCheckbox.checked && frameClass === "premium";
+        const ledType = ledEnabled
+          ? Array.from(ledTypeRadios).find((r) => r.checked)?.value || ""
+          : "Nessuno";
+        const graphicName = selectedGraphic ? selectedGraphic.name : "Nessuna";
+
+        alert(
+          `Richiesta preventivo:\nModello: ${model}\nCornice: ${frameColor}\nClasse: ${frameClass}\n` +
+            `LED attivi: ${
+              ledEnabled ? "Sì" : "No"
+            }\nTipo LED: ${ledType}\nGrafica: ${graphicName}`
+        );
+      });
+
+      // Inizializzazione
+      populateModels();
+      updateFramePreview();
+    </script>
+  </body>
+</html>
