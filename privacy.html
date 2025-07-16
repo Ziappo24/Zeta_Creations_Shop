@@ -1,53 +1,120 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <title>Informativa sulla privacy</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #0e0e0e;
-      color: white;
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1 {
-      color: #facc15;
-    }
-    a {
-      color: #ff70a6;
-    }
-        .home-link {
-      text-decoration: none;
-      font-size: 1.8rem;
-      color: #fff;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Informativa sulla privacy</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #0e0e0e;
+        color: white;
+        padding: 40px;
+        max-width: 800px;
+        margin: auto;
+      }
+      h1 {
+        color: #facc15;
+      }
+      a {
+        color: #ff70a6;
+      }
+      .home-link {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #fff;
+      }
 
-    .home-link::before {
-      content: "🏠";
-      margin-right: 6px;
-    }
-  </style>
-</head>
-<body>
+      .home-link::before {
+        content: "🏠";
+        margin-right: 6px;
+      }
+      .menu-toggle {
+        position: absolute;
+        left: auto;
+        right: 20px;
+        top: 20px;
+        font-size: 1.5rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 999;
+      }
+
+      .side-menu {
+        position: fixed;
+        top: 0;
+        left: auto;
+        right: -260px;
+        width: 240px;
+        height: 100%;
+        background-color: #0e0e0e;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        z-index: 998;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.5);
+      }
+
+      .side-menu.open {
+        right: 0;
+      }
+
+      .side-menu a {
+        display: block;
+        padding: 16px 24px;
+        color: #d1d5db;
+        text-decoration: none;
+        font-size: 1rem;
+        border-bottom: 1px solid #ffffff;
+        transition: background 0.3s;
+      }
+
+      .side-menu a:hover {
+        background-color: #1f2937;
+        color: #f9fafb;
+      }
+      @media (min-width: 768px) {
+        .side-menu.open + main {
+          margin-left: 240px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <a href="index.html" class="home-link">Home</a>
-  <h1>Informativa sulla privacy</h1>
-  <p>
-    Questo sito non raccoglie né memorizza alcun dato personale.
-    I dati eventualmente inseriti (es. nome o indirizzo email) vengono utilizzati unicamente per rispondere alle richieste dell’utente e non vengono salvati su nessun server.
-  </p>
+    <!-- MENU -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav class="side-menu" id="sideMenu">
+      <a href="product_list.html">Cornici Espositive</a>
+      <a href="infinity.html">Infinity Mirror</a>
+      <a href="led_list.html">LED add-on</a>
+      <a href="contact.html">Contatti</a>
+      <a href="info.html">Informazioni</a>
+    </nav>
+    <h1>Informativa sulla privacy</h1>
+    <p>
+      Questo sito non raccoglie né memorizza alcun dato personale. I dati
+      eventualmente inseriti (es. nome o indirizzo email) vengono utilizzati
+      unicamente per rispondere alle richieste dell’utente e non vengono salvati
+      su nessun server.
+    </p>
 
-  <p>
-    Non vengono usati cookie di profilazione né strumenti di tracciamento. Nessun dato viene ceduto a terzi.
-  </p>
+    <p>
+      Non vengono usati cookie di profilazione né strumenti di tracciamento.
+      Nessun dato viene ceduto a terzi.
+    </p>
 
-  <p>
-    Per qualsiasi informazione puoi contattare: <a href="mailto:ziappusbusiness@gmail.com">ziappusbusiness@gmail.com</a>
-  </p>
+    <p>
+      Per qualsiasi informazione puoi contattare:
+      <a href="mailto:ziappusbusiness@gmail.com">ziappusbusiness@gmail.com</a>
+    </p>
 
-  <p>
-    Ultimo aggiornamento: Luglio 2025
-  </p>
-</body>
+    <p>Ultimo aggiornamento: Luglio 2025</p>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("sideMenu");
+        menu.classList.toggle("open");
+      }
+    </script>
+  </body>
 </html>
