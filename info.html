@@ -63,8 +63,11 @@
       }
 
       .cta {
-        text-align: center;
-        margin-top: 40px;
+        display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
       }
 
       .cta a {
@@ -82,6 +85,18 @@
       .cta a:hover {
         background: linear-gradient(90deg, #ff4da6, #a56af8);
       }
+      /* Responsivo per mobile */
+@media (max-width: 600px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta a {
+    width: 80%;
+    text-align: center;
+  }
+}
 
       footer {
         text-align: center;

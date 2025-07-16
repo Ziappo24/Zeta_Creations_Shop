@@ -1,0 +1,87 @@
+[
+  {
+    "name": "F1 FERRARI SF-24",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "F1 MERCEDES",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "F1 MCLAREN",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "F1 RED BULL",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "PEUGEOT 9X8",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "PORSCHE GT3-RSR",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "LAMBORGHINI SIAN",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "BUGATTI CHIRON",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "PORSCHE GT3-RS ORANGE",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "FORD GT",
+    "size": "50x70 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "F1 MCLAREN AYRTON SENNA ",
+    "size": "30x40 cm cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "F1 WILLIAMS RACING NIGEL MANSELL",
+    "size": "30x40 cm cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "NISSAN GTR NISMO",
+    "size": "30x40 cm cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "TOYOTA SUPRA GR",
+    "size": "30x40 cm cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "KOENIGSEGG JESKO GREEN/WHITE",
+    "size": "30x40 cm cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "KOENIGSEGG JESKO ABSOLUTE",
+    "size": "30x40 cm cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  },
+  {
+    "name": "BMW S1000RR",
+    "size": "40x50 cm",
+    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+  }
+]
