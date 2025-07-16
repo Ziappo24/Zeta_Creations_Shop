@@ -2,22 +2,45 @@
   {
     "name": "F1 FERRARI SF-24",
     "size": "50x70 cm",
-    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+    "graphics": [
+      "assets/images/models/sf-24/2.png",
+      "assets/images/models/sf-24/5.png",
+      "assets/images/models/sf-24/7.png",
+      "assets/images/models/sf-24/11.png",
+      "assets/images/models/sf-24/13.png",
+      "assets/images/models/sf-24/15.png"
+    ]
   },
   {
     "name": "F1 MERCEDES",
     "size": "50x70 cm",
-    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+    "graphics": [
+      "assets/images/models/mercedesf1/3.png",
+      "assets/images/models/mercedesf1/5.png",
+      "assets/images/models/mercedesf1/8.png",
+      "assets/images/models/mercedesf1/10.png"
+    ]
   },
   {
     "name": "F1 MCLAREN",
     "size": "50x70 cm",
-    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+    "graphics": [
+      "assets/images/models/mclarenf1/3.png",
+      "assets/images/models/mclarenf1/4.png",
+      "assets/images/models/mclarenf1/7.png"
+    ]
   },
   {
     "name": "F1 RED BULL",
     "size": "50x70 cm",
-    "graphics": ["alpha_front.png", "alpha_side.png", "alpha_back.png"]
+    "graphics": [
+      "assets/images/models/redbullf1/2.png",
+      "assets/images/models/redbullf1/6.png",
+      "assets/images/models/redbullf1/8.png",
+      "assets/images/models/redbullf1/9.png",
+      "assets/images/models/redbullf1/11.png",
+      "assets/images/models/redbullf1/15.png"
+    ]
   },
   {
     "name": "PEUGEOT 9X8",
